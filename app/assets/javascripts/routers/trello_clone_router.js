@@ -27,7 +27,9 @@ TrelloClone.Routers.TrelloCloneRouter = Backbone.Router.extend({
   },
 
   boardForm: function () {
-    var boardForm = new TrelloClone.Views.Boards.Form();
+    var boardForm = new TrelloClone.Views.Boards.Form({
+      collection: TrelloClone.boards
+    });
     this.$rootEl.html(boardForm.render().$el);
   },
 
