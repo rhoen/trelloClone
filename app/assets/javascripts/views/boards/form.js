@@ -15,7 +15,6 @@ TrelloClone.Views.Boards.Form = Backbone.View.extend({
     board.set(formData);
     board.save({}, {
       success: function () {
-        console.log("made a board, success callback");
         this.collection.add(board);
         Backbone.history.navigate("#/boards");
       }.bind(this)

@@ -10,12 +10,11 @@ TrelloClone.Views.Boards.Boards = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "sync add remove", this.render);
   },
 
   destroyBoard: function(event) {
     event.preventDefault();
-    debugger
     var board = this.collection.getOrFetch(
       $(event.currentTarget).data('board-id')
     );

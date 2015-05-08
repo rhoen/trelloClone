@@ -11,15 +11,12 @@ TrelloClone.Routers.TrelloCloneRouter = Backbone.Router.extend({
   },
 
   index: function () {
-    console.log("in index function")
     // var rootView = new TrelloClone.Views.Root();
     // this.$rootEl.html(rootView.render().$el);
     Backbone.history.navigate("#/boards")
   },
 
   boardsIndex: function () {
-    console.log("in boardsIndex function");
-
     var boardsView = new TrelloClone.Views.Boards.Boards({
       collection: TrelloClone.boards
     });
