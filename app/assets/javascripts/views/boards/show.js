@@ -25,6 +25,11 @@ TrelloClone.Views.Boards.Show = Backbone.View.extend({
     return this;
   },
 
+  //TODO write a parse method and instantiate list collection objects
+  //also write a parse method on list collection that instantiates
+  //cards using {parse: true} to force a parse even tho the server isn't
+  //pulling down in that case. 
+
   remove: function () {
     this._listSubViews.forEach(function(subView) {
       subView.remove();
