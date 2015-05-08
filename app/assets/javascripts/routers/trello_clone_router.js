@@ -5,7 +5,8 @@ TrelloClone.Routers.TrelloCloneRouter = Backbone.Router.extend({
   },
 
   index: function () {
-    
+    var rootView = new TrelloClone.Views.Root();
+    this.$el.html(rootView.render().$el);
   }
 
 
