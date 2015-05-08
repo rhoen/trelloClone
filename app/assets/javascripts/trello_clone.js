@@ -1,7 +1,9 @@
 window.TrelloClone = {
   Models: {},
   Collections: {},
-  Views: {},
+  Views: {
+    Boards: {}
+  },
   Routers: {},
   initialize: function() {
     alert("Hello from Backbone!");
