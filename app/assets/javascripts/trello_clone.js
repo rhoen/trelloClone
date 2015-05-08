@@ -13,6 +13,7 @@ window.TrelloClone = {
       new TrelloClone.Routers.TrelloCloneRouter({$rootEl: $rootEl});
       Backbone.history.start();
     }
+    TrelloClone.boards = new TrelloClone.Collections.Boards();
   }
 };
 

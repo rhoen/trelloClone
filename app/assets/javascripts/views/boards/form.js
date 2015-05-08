@@ -14,9 +14,7 @@ TrelloClone.Views.Boards.Form = Backbone.View.extend({
     debugger
     var formData = $(event.currentTarget).serializeJSON();
     board.set(formData);
-    board.save({}, //callback
-
-    ).bind(this);
+    board.save({}) //callback).bind(this);
   }
 
 })
