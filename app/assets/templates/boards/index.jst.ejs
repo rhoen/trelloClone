@@ -4,6 +4,10 @@
   <% boards.forEach(function(board) { %>
     <li>
       <%= board.get("title") %> created at <%= board.get("created_at") %>
+      <button
+        class="delete"
+        data-board-id="<%= board.id %>">Delete
+      </button>
     </li>
   <% }) %>
 </ul>
