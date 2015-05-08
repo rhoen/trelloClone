@@ -2,7 +2,7 @@
 <ul>
   <% cards.forEach(function(card) { %>
     <li>
-      <%= card.title %>
+      <a href="#/card/<%=card.id%>"><%= card.title %></a>
     </li>
   <% }) %>
 

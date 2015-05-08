@@ -9,7 +9,7 @@ TrelloClone.Views.Boards.Show = Backbone.View.extend({
     this.$el.append(this.template({board: this.model}));
 
     var lists = this.model.get('lists');
-    var this._listSubViews = [];
+    this._listSubViews = [];
 
     if (lists) {
       for (var i = 0; i < lists.length; i++) {
@@ -29,7 +29,7 @@ TrelloClone.Views.Boards.Show = Backbone.View.extend({
     this._listSubViews.forEach(function(subView) {
       subView.remove();
     })
-    
+
     this.$el.remove();
     this.stopListening();
     return this;
