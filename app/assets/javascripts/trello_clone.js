@@ -11,9 +11,11 @@ window.TrelloClone = {
     if (typeof $rootEl !== "undefined") {
       console.log("make new TrelloCloneRouter");
       new TrelloClone.Routers.TrelloCloneRouter({$rootEl: $rootEl});
-      Backbone.history.start();
     }
     TrelloClone.boards = new TrelloClone.Collections.Boards();
+    TrelloClone.boards.fetch();
+    debugger
+    Backbone.history.start();
   }
 };
 

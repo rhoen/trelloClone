@@ -1,0 +1,8 @@
+<h3>Look at all your beautiful boards!</h3>
+<ul>
+  <% boards.forEach(function(board) { %>
+    <li>
+      <%= board.get("title") %> created at <%= board.get("created_at") %>
+    </li>
+  <% }) %>
+</ul>
