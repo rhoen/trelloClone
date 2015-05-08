@@ -1,8 +1,7 @@
 TrelloClone.Views.Boards.Form = Backbone.View.extend({
   template: JST['boards/form'],
   events: {
-    "submit form" : "createBoard",
-    "click button.delete" : "destroyBoard"
+    "submit form" : "createBoard"
   },
   render: function () {
     this.$el.html(this.template());
@@ -22,14 +21,5 @@ TrelloClone.Views.Boards.Form = Backbone.View.extend({
       }.bind(this)
     })
   },
-
-  destroyBoard: function(event) {
-    event.preventDefault();
-    // var board = this.collection.getOrFetch()
-
-
-
-  }
-
 
 })

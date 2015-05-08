@@ -5,23 +5,26 @@ TrelloClone.Views.Boards.Boards = Backbone.View.extend({
     return this;
   },
 
+  events: {
+    "click button.delete" : "destroyBoard"
+  },
+
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);
   },
 
-  getOrFetch: function(id) {
-    var board = this.get(id);
-    if (board) {
-      board.fetch();
-    } else {
-      board = new TrelloClone.Models.Board(id);
-      board.fetch({
-        success: function () {
-          this.add(board);
-        }.bind(this)
-      })
-    }
+  destroyBoard: function(event) {
+    event.preventDefault();
+    debugger
+    var board = this.collection.getOrFetch(
+      $(event.currentTarget).data('board-id')
+    );
 
-    return board;
+    board.destroy({
+      success: function () {
+        this.collection.remove(board)
+      }.bind(this)
+    });
   }
+
 })
