@@ -28,6 +28,14 @@ TrelloClone.Routers.TrelloCloneRouter = Backbone.Router.extend({
   boardForm: function () {
     var boardForm = new TrelloClone.Views.Boards.Form();
     this.$rootEl.html(boardForm.render().$el);
+  },
+
+  swapView: function(newView) {
+    if (!this._currentView) {
+      this._currentView = newView;
+    }
+    this._currentView.remove();
+    this._currentView = newView;
   }
 
 
