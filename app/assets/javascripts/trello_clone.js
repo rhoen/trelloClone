@@ -2,7 +2,8 @@ window.TrelloClone = {
   Models: {},
   Collections: {},
   Views: {
-    Boards: {}
+    Boards: {},
+    Lists: {}
   },
   Routers: {},
   initialize: function() {
