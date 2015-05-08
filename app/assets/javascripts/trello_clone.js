@@ -5,6 +5,7 @@ window.TrelloClone = {
   Routers: {},
   initialize: function() {
     alert("Hello from Backbone!");
+    
   }
 };
 
