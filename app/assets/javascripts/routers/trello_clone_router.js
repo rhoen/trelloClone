@@ -1,7 +1,8 @@
 TrelloClone.Routers.TrelloCloneRouter = Backbone.Router.extend({
   routes: {
     "" : "index",
-    "boards" : "boardsIndex"
+    "boards" : "boardsIndex",
+    "boards/new" : "boardForm"
 
   },
 
@@ -19,6 +20,11 @@ TrelloClone.Routers.TrelloCloneRouter = Backbone.Router.extend({
     console.log("in boardsIndex function");
     var boardsView = new TrelloClone.Views.Boards.Boards();
     this.$rootEl.html(boardsView.render().$el);
+  },
+
+  boardForm: function () {
+    var boardForm = new TrelloClone.Views.Boards.Form();
+    this.$rootEl.html(boardForm.render().$el);
   }
 
 
