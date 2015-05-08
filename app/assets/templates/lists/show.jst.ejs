@@ -1,1 +1,9 @@
-<h4>list.title<h4>
+<h4><%= list.title %><h4>
+<ul>
+  <% cards.forEach(function(card) { %>
+    <li>
+      <%= card.title %>
+    </li>
+  <% }) %>
+
+</ul>
