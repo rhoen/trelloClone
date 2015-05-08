@@ -9,12 +9,12 @@ TrelloClone.Views.Boards.Show = Backbone.View.extend({
     this.$el.append(this.template({board: this.model}));
 
     var lists = this.model.get('lists');
-    var listSubViews = [];
+    var this._listSubViews = [];
 
     if (lists) {
       for (var i = 0; i < lists.length; i++) {
         var subView = new TrelloClone.Views.Lists.Show({model: lists[i]});
-        listSubViews.push(subView);
+        this._listSubViews.push(subView);
         this.$("section.lists")
           .append(subView.render().$el);
       }
@@ -22,6 +22,16 @@ TrelloClone.Views.Boards.Show = Backbone.View.extend({
     //iterate through the board's lists and create a subview for each one
     //this.model.lists().forEach(create a listView and append to $el)
     //the listView will display the titles of the cards inside that list
+    return this;
+  },
+
+  remove: function () {
+    this._listSubViews.forEach(function(subView) {
+      subView.remove();
+    })
+    
+    this.$el.remove();
+    this.stopListening();
     return this;
   }
 })

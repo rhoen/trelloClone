@@ -6,7 +6,6 @@ TrelloClone.Views.Lists.Show = Backbone.View.extend({
 
     }));
 
-    debugger
     return this;
   }
 })
