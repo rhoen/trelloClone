@@ -19,8 +19,14 @@ TrelloClone.Routers.TrelloCloneRouter = Backbone.Router.extend({
   boardsIndex: function () {
     console.log("in boardsIndex function");
 
-    var boardsView = new TrelloClone.Views.Boards.Boards({collection: TrelloClone.boards});
-    this.$rootEl.html(boardsView.render().$el);
+    var boardsView = new TrelloClone.Views.Boards.Boards({
+      collection: TrelloClone.boards
+    });
+    TrelloClone.boards.fetch({
+      success: function () {
+        this.$rootEl.html(boardsView.render().$el);
+      }.bind(this)
+    })
   },
 
   boardForm: function () {
