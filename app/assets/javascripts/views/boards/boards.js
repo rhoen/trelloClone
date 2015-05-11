@@ -9,6 +9,11 @@ TrelloClone.Views.Boards.Boards = Backbone.View.extend({
       this._subViews.push(boardTitle);
       this.$el.append(boardTitle.render().$el);
     }.bind(this))
+    var formView = new TrelloClone.Views.Boards.Form({
+      collection: this.collection
+    });
+    this._subViews.push(formView);
+    this.$el.append(formView.render().$el);
     return this;
   },
 
