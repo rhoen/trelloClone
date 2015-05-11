@@ -3,7 +3,7 @@ TrelloClone.Models.Board = Backbone.Model.extend({
   parse: function(response) {
     debugger
     this.lists = new TrelloClone.Collections.Lists();
-    this.lists.add(response.lists);
+    this.lists.add(response.lists, {parse: true});
     delete response.lists
     return response;
   }
