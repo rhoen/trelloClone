@@ -6,10 +6,11 @@ TrelloClone.Views.Lists.Show = Backbone.View.extend({
   },
   destroyList: function(event) {
     event.preventDefault();
+    debugger
     this.model.destroy({
-      success: function () {
-        this.collection.remove(this.model);
-      }.bind(this)
+      // success: function () {
+      //   this.collection.remove(this.model);
+      // }.bind(this)
     })
   },
   render: function () {
