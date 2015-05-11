@@ -4,13 +4,11 @@ TrelloClone.Views.Boards.Show = Backbone.View.extend({
     this.listenTo(this.model, "sync", this.render);
   },
   render: function () {
-    console.log("Render Board Show");
     this.$el.empty();
     this.$el.append(this.template({board: this.model}));
 
     var lists = this.model.lists;
     this._listSubViews = [];
-    debugger
     if (lists) {
       lists.forEach(function(list){
         var subView = new TrelloClone.Views.Lists.Show({model: list});
