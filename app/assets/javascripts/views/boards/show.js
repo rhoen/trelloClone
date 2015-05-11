@@ -18,7 +18,10 @@ TrelloClone.Views.Boards.Show = Backbone.View.extend({
         this.$("section.lists").append(subView.render().$el);
       }.bind(this))
     }
-    var listForm = new TrelloClone.Views.Lists.Form();
+    var listForm = new TrelloClone.Views.Lists.Form({
+      collection: this.model.lists,
+      board: this.model
+    });
     this._listSubViews.push(listForm);
     this.$el.append(listForm.render().$el);
     return this;

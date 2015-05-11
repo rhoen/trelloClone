@@ -4,18 +4,22 @@ TrelloClone.Views.Lists.Form = Backbone.View.extend({
   events: {
     "submit form" : "createList"
   },
+  initialize: function (options) {
+    this.board = options.board
+  },
   render: function () {
     this.$el.html(this.template());
     return this;
   },
   createList: function(event) {
+    event.preventDefault();
     var list = new TrelloClone.Models.List();
     var formData = $(event.currentTarget).serializeJSON();
-    list.set(formData);
+    list.set(formData.list);
+    list.set({board_id: this.board.id})
     list.save({}, function () {
-      //TODO lists should be a collection that can be added to here
-      //to trigger a sync event
-    })
+      this.collection.add(list)
+    }.bind(this))
   }
 
 })
