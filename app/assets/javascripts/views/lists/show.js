@@ -1,6 +1,17 @@
 TrelloClone.Views.Lists.Show = Backbone.View.extend({
   template: JST['lists/show'],
   className: "list",
+  events: {
+    "click .delete" : "destroyList"
+  },
+  destroyList: function(event) {
+    event.preventDefault();
+    this.model.destroy({
+      success: function () {
+        this.collection.remove(this.model);
+      }.bind(this)
+    })
+  },
   render: function () {
 
     this.$el.html(this.template({list: this.model}))
