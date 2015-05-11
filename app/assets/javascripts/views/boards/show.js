@@ -18,9 +18,9 @@ TrelloClone.Views.Boards.Show = Backbone.View.extend({
         this.$("section.lists").append(subView.render().$el);
       }.bind(this))
     }
-    //iterate through the board's lists and create a subview for each one
-    //this.model.lists().forEach(create a listView and append to $el)
-    //the listView will display the titles of the cards inside that list
+    var listForm = new TrelloClone.Views.Lists.Form();
+    this._listSubViews.push(listForm);
+    this.$el.append(listForm.render().$el);
     return this;
   },
 

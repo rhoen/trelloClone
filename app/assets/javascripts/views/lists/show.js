@@ -5,13 +5,16 @@ TrelloClone.Views.Lists.Show = Backbone.View.extend({
 
     this.$el.html(this.template({list: this.model}))
 
-    this._cardSubViews = [];
+    this._subViews = [];
     this.model.cards.forEach(function(card) {
       var cardView = new TrelloClone.Views.Cards.Title({model: card});
-      this._cardSubViews.push(cardView);
+      this._subViews.push(cardView);
       this.$("ul").append(cardView.render().$el);
     }.bind(this))
 
+    // var formView = new TrelloClone.Views.Cards.Form();
+    // this._subViews.push(formView);
+    // this.$el.append(formView.render().$el)
     return this;
   }
 })
