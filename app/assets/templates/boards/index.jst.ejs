@@ -1,13 +1,2 @@
 <h3>Look at all your beautiful boards!</h3>
 <a href="#/boards/new">New Board</a>
-<ul>
-  <% boards.forEach(function(board) { %>
-    <li>
-      <a href="#/boards/<%=board.id%>"><%= board.get("title") %></a> created at <%= board.get("created_at") %>
-      <button
-        class="delete"
-        data-board-id="<%= board.id %>">Delete
-      </button>
-    </li>
-  <% }) %>
-</ul>
