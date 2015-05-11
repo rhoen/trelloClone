@@ -17,6 +17,20 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.list {
+  background: gray;
+  border: 2px solid black;
+  width: 200px;
+  float: left;
+}
+
+.card-link {
+  display: block;
+  background: red;
+}
+.card-link:hover {
+  background: yellow;
+}
 
 .board-title-box {
   background: red;
